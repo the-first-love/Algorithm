@@ -15,16 +15,18 @@ for(int i = 1; i <= n; i++)
 cin >> a[i];
 sum += a[i];
 }
+
 int left = 1, right = 1;
 LL k = 0;
 LL ret = 0;
+
 while(right<=n)
 {
 k+=a[right];
-while(k>=sum/2)
+while(2*k>=sum)
 {
 ret=max(ret,sum-k);
-k-=a[left];
+k-=a[left++];
 }
 ret=max(ret,k);
 right++;
